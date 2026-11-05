@@ -4,7 +4,7 @@
 @section('subtitle', 'اطلاعات تماس، محتوای صفحه اصلی و تنظیمات سئو')
 
 @section('content')
-    <form action="{{ route('admin.settings.update') }}" method="POST" class="space-y-6">
+    <form action="{{ route('admin.settings.update') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
         @csrf
         @method('PUT')
 
@@ -86,6 +86,11 @@
                             <input id="mobile" name="mobile" type="text" value="{{ old('mobile', setting('mobile')) }}" class="admin-input" dir="ltr" placeholder="0412 345 678">
                         </div>
                         <div>
+                            <label for="whatsapp" class="admin-label">شماره واتساپ</label>
+                            <input id="whatsapp" name="whatsapp" type="text" value="{{ old('whatsapp', setting('whatsapp')) }}" class="admin-input" dir="ltr" placeholder="61412345678">
+                            <p class="mt-1 text-[10px] text-slate-400">با کد کشور و بدون فاصله. برای دکمه شناور واتساپ استفاده می‌شود.</p>
+                        </div>
+                        <div>
                             <label for="email" class="admin-label">ایمیل</label>
                             <input id="email" name="email" type="email" value="{{ old('email', setting('email')) }}" class="admin-input" dir="ltr" placeholder="hello@lionpainters.com.au">
                         </div>
@@ -144,6 +149,28 @@
                                     <textarea id="hero_text" name="hero_text" rows="2" class="admin-input" dir="ltr">{{ old('hero_text', setting('hero_text')) }}</textarea>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="rounded-xl border border-slate-100 bg-slate-50/50 p-4">
+                            <p class="text-[11px] font-semibold text-slate-600">تصاویر صفحه اصلی</p>
+                            <p class="mt-1 text-[10px] text-slate-400">تصاویر هیرو، بخش «چرا ما» و مقایسه قبل/بعد. اگر تصویری انتخاب نشود، تصویر فعلی حفظ می‌شود.</p>
+                            <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                                @foreach ([
+                                    ['name' => 'hero_image', 'label' => 'تصویر هیرو', 'value' => setting('hero_image', 'images/loin.png')],
+                                    ['name' => 'home_why_image', 'label' => 'تصویر بخش چرا ما', 'value' => setting('home_why_image', 'images/living-room.png')],
+                                    ['name' => 'home_before_image', 'label' => 'تصویر «قبل»', 'value' => setting('home_before_image', 'images/before.jpg')],
+                                    ['name' => 'home_after_image', 'label' => 'تصویر «بعد»', 'value' => setting('home_after_image', 'images/after.jpg')],
+                                ] as $image)
+                                    <div>
+                                        <label for="{{ $image['name'] }}" class="admin-label">{{ $image['label'] }}</label>
+                                        @if ($image['value'])
+                                            <img src="{{ asset_versioned($image['value']) }}" alt="" class="mb-2 h-24 w-full rounded-xl border border-slate-200 object-cover">
+                                        @endif
+                                        <input id="{{ $image['name'] }}" name="{{ $image['name'] }}" type="file" accept="image/*" class="admin-input file:mr-3 file:rounded-lg file:border-0 file:bg-slate-100 file:px-3 file:py-1.5 file:text-[11px]">
+                                    </div>
+                                @endforeach
+                            </div>
+                            <p class="mt-3 text-[10px] text-slate-400">JPG، PNG یا WebP — حداکثر ۴ مگابایت.</p>
                         </div>
 
                         <div class="rounded-xl border border-slate-100 bg-slate-50/50 p-4">

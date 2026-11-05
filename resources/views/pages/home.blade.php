@@ -8,7 +8,7 @@
     {{-- Hero --}}
     <section class="relative overflow-hidden bg-ink-950 text-cream-50">
         <img
-            src="{{ asset('images/loin.png') }}"
+            src="{{ asset_versioned(setting('hero_image', 'images/loin.png')) }}"
             alt="A richly painted Melbourne living room with an arched window, cream sofa and gold-framed lion artwork"
             class="absolute inset-0 h-full w-full object-cover object-[62%_center]"
             width="1920"
@@ -124,7 +124,7 @@
                     <div class="absolute -left-3 -top-3 h-full w-full border border-gold-500/35"></div>
                     <div class="relative overflow-hidden bg-ink-900">
                         <img
-                            src="{{ asset('images/living-room.png') }}"
+                            src="{{ asset_versioned(setting('home_why_image', 'images/living-room.png')) }}"
                             alt="Close-up of a paint roller applying a fresh cream coat to a wall"
                             class="aspect-[4/3.2] w-full object-cover"
                             loading="lazy"
@@ -218,9 +218,9 @@
                 data-reveal
             >
                 <div class="relative overflow-hidden border border-cream-50/10" x-ref="frame">
-                    <img src="{{ asset('images/before.jpg') }}" alt="Living room before painting, with tired neutral walls" class="aspect-[4/3] w-full object-cover" loading="lazy" width="1600" height="1000">
+                    <img src="{{ asset_versioned(setting('home_before_image', 'images/before.jpg')) }}" alt="Living room before painting, with tired neutral walls" class="aspect-[4/3] w-full object-cover" loading="lazy" width="1600" height="1000">
                     <div class="absolute inset-0" :style="`clip-path: inset(0 0 0 ${position}%)`">
-                        <img src="{{ asset('images/after.jpg') }}" alt="The same living room after a premium green repaint and new styling" class="h-full w-full object-cover" loading="lazy" width="1600" height="1000">
+                        <img src="{{ asset_versioned(setting('home_after_image', 'images/after.jpg')) }}" alt="The same living room after a premium green repaint and new styling" class="h-full w-full object-cover" loading="lazy" width="1600" height="1000">
                     </div>
 
                     <span class="absolute left-4 top-4 bg-ink-950/70 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-cream-50/80 backdrop-blur">Before</span>
@@ -430,6 +430,4 @@
             </aside>
         </div>
     </section>
-
-    <x-quote-cta />
 </x-layout>

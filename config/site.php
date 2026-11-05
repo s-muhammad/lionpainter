@@ -17,6 +17,7 @@ return [
         'phone' => '03 9123 4567',
         'phone_href' => '+61391234567',
         'mobile' => '0412 345 678',
+        'whatsapp' => '61412345678',
         'email' => 'hello@lionpainters.com.au',
         'address' => '12 Cremorne Street, Cremorne VIC 3121',
         'service_area' => 'Melbourne & surrounding suburbs',
@@ -28,6 +29,11 @@ return [
         'hero_eyebrow' => 'Melbourne’s residential painting specialists',
         'hero_title' => 'Masterful painting. Exquisite homes.',
         'hero_text' => 'Transforming Melbourne’s finest interiors and facades with skill, care and a touch of majesty — from heritage terraces to contemporary homes.',
+        'hero_image' => 'images/loin.png',
+
+        'home_why_image' => 'images/living-room.png',
+        'home_before_image' => 'images/before.jpg',
+        'home_after_image' => 'images/after.jpg',
 
         'intro_heading' => 'Our premium services',
         'intro_text' => 'A complete, considered painting service for every surface of your home. One dedicated team, one impeccable standard.',

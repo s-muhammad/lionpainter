@@ -211,5 +211,35 @@
     </main>
 
     <x-site-footer />
+
+    @php
+        $whatsappNumber = preg_replace('/\D/', '', (string) setting('whatsapp'));
+
+        if (str_starts_with($whatsappNumber, '0')) {
+            $whatsappNumber = '61'.ltrim($whatsappNumber, '0');
+        }
+    @endphp
+
+    {{-- Mobile floating contact actions --}}
+    <div class="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-4 z-40 flex flex-col gap-3 lg:hidden">
+        <a
+            href="tel:{{ setting('phone_href') ?: setting('mobile') }}"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-gold-500 text-ink-950 shadow-lg shadow-ink-950/25 ring-1 ring-black/5 transition-transform active:scale-95"
+            aria-label="تماس تلفنی با {{ setting('brand') }}"
+        >
+            <x-icon name="phone" class="h-6 w-6" />
+        </a>
+        @if ($whatsappNumber !== '')
+            <a
+                href="https://wa.me/{{ $whatsappNumber }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-ink-950/25 ring-1 ring-black/5 transition-transform active:scale-95"
+                aria-label="گفت‌وگو در واتساپ با {{ setting('brand') }}"
+            >
+                <x-icon name="whatsapp" class="h-6 w-6" />
+            </a>
+        @endif
+    </div>
 </body>
 </html>

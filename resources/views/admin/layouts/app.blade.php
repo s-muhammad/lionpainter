@@ -38,25 +38,25 @@
             class="admin-sidebar fixed inset-y-0 right-0 z-50 flex h-dvh w-72 flex-col overflow-hidden bg-ink-950 text-slate-300 transition-transform duration-300 lg:translate-x-0"
             :class="sidebar ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'"
         >
-            <div class="flex h-20 shrink-0 items-center justify-between border-b border-white/10 px-5">
+            <div class="flex h-16 shrink-0 items-center justify-between border-b border-white/10 px-4">
                 <x-logo theme="dark" compact />
                 <button type="button" class="text-slate-400 hover:text-white lg:hidden" @click="sidebar = false" aria-label="بستن منو">
                     <x-icon name="close" class="h-5 w-5" />
                 </button>
             </div>
-            <div class="shrink-0 px-5 pt-5">
-                <p class="text-[10px] font-medium tracking-wide text-slate-500">پنل مدیریت سایت</p>
-                <p class="mt-1 text-sm font-semibold text-slate-200">خوش آمدید، {{ auth()->user()->name }}</p>
+            <div class="shrink-0 px-4 pt-3">
+                <p class="text-[9px] font-medium tracking-wide text-slate-500">پنل مدیریت سایت</p>
+                <p class="mt-0.5 text-[12px] font-semibold text-slate-200">خوش آمدید، {{ auth()->user()->name }}</p>
             </div>
 
-            <nav class="mt-4 min-h-0 flex-1 space-y-1 overflow-y-auto overscroll-contain px-3 pb-6" aria-label="منوی مدیریت">
+            <nav class="mt-2 min-h-0 flex-1 space-y-0.5 overflow-y-auto overscroll-contain px-2 pb-3" aria-label="منوی مدیریت">
                 @foreach ($navigation as $item)
                     <a
                         href="{{ route($item['route']) }}"
-                        class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[13px] transition-colors {{ request()->routeIs($item['active']) ? 'bg-white/10 font-semibold text-white' : 'text-slate-400 hover:bg-white/5 hover:text-slate-200' }}"
+                        class="flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-[12px] transition-colors {{ request()->routeIs($item['active']) ? 'bg-white/10 font-semibold text-white' : 'text-slate-400 hover:bg-white/5 hover:text-slate-200' }}"
                     >
-                        <span class="flex h-8 w-8 items-center justify-center rounded-lg {{ request()->routeIs($item['active']) ? 'bg-gold-500/15 text-gold-400' : 'text-slate-500' }}">
-                            <x-icon :name="$item['icon']" class="h-4 w-4" />
+                        <span class="flex h-7 w-7 items-center justify-center rounded-md {{ request()->routeIs($item['active']) ? 'bg-gold-500/15 text-gold-400' : 'text-slate-500' }}">
+                            <x-icon :name="$item['icon']" class="h-3.5 w-3.5" />
                         </span>
                         <span class="flex-1">{{ $item['label'] }}</span>
                         @if (! empty($item['badge']))
@@ -66,19 +66,19 @@
                 @endforeach
             </nav>
 
-            <div class="shrink-0 border-t border-white/10 p-3">
-                <a href="{{ route('home') }}" target="_blank" class="flex items-center gap-3 rounded-xl px-3 py-2.5 text-[12px] text-slate-400 transition-colors hover:bg-white/5 hover:text-slate-200">
-                    <x-icon name="arrow-up-right" class="h-4 w-4" />
+            <div class="shrink-0 border-t border-white/10 p-2">
+                <a href="{{ route('home') }}" target="_blank" class="flex items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-[11px] text-slate-400 transition-colors hover:bg-white/5 hover:text-slate-200">
+                    <x-icon name="arrow-up-right" class="h-3.5 w-3.5" />
                     مشاهده سایت
                 </a>
                 <form action="{{ route('admin.logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-[12px] text-slate-400 transition-colors hover:bg-red-500/10 hover:text-red-300">
-                        <x-icon name="logout" class="h-4 w-4" />
+                    <button type="submit" class="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-[11px] text-slate-400 transition-colors hover:bg-red-500/10 hover:text-red-300">
+                        <x-icon name="logout" class="h-3.5 w-3.5" />
                         خروج از حساب
                     </button>
                 </form>
-                <p class="px-3 pt-3 text-[9px] text-slate-600">Lion Painters · نسخه مدیریت</p>
+                <p class="px-2.5 pt-1.5 text-[8px] text-slate-600">Lion Painters · نسخه مدیریت</p>
             </div>
         </aside>
 
