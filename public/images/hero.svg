@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2=".45" y2="1">
+      <stop offset="0" stop-color="#43544C"/>
+      <stop offset="1" stop-color="#14242A"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#EFE0BE"/>
+      <stop offset=".5" stop-color="#DCC79E"/>
+      <stop offset="1" stop-color="#8FA08A"/>
+    </linearGradient>
+    <linearGradient id="sofaGrad" x1="0" y1="0" x2=".2" y2="1">
+      <stop offset="0" stop-color="#E8DCC6"/>
+      <stop offset="1" stop-color="#E8DCC6" stop-opacity=".78"/>
+    </linearGradient>
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#241F1A"/>
+      <stop offset="1" stop-color="#15120F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".62" cy=".42" r=".62">
+      <stop offset="0" stop-color="#FFF3D3" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#FFF3D3" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx=".5" cy=".45" r=".78">
+      <stop offset=".45" stop-color="#08131B" stop-opacity="0"/>
+      <stop offset="1" stop-color="#08131B" stop-opacity="0.34"/>
+    </radialGradient>
+    
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#EBD49B"/>
+    <stop offset="0.5" stop-color="#C6A45F"/>
+    <stop offset="1" stop-color="#967536"/>
+  </linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="softSm"><feGaussianBlur stdDeviation="5"/></filter>
+    
+  <filter id="grain" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch" result="n"/>
+    <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+    <feComponentTransfer in="g" result="t">
+      <feFuncA type="linear" slope="0.14" intercept="0"/>
+    </feComponentTransfer>
+    <feComposite in="t" in2="SourceGraphic" operator="in"/>
+  </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#wall)"/>
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+
+  <!-- ceiling & mouldings -->
+  <rect x="0" y="0" width="1920" height="48.6" fill="#08131B" opacity=".22"/>
+  <rect x="0" y="48.6" width="1920" height="6" fill="#E8DCC6" opacity=".18"/>
+  <rect x="0" y="97.2" width="1920" height="7" fill="#000" opacity=".16"/>
+  <rect x="0" y="104.2" width="1920" height="2" fill="#C6A45F" opacity=".5"/>
+  <rect x="0" y="796.2" width="1920" height="16" fill="#000" opacity=".14"/>
+  <rect x="0" y="812.2" width="1920" height="14" fill="#E8DCC6" opacity=".24"/>
+
+  <!-- floor -->
+  <rect x="0" y="826.2" width="1920" height="253.79999999999995" fill="url(#floorGrad)"/>
+  <g stroke="#F6E9CF" stroke-opacity=".055" stroke-width="2">
+    <path d="M0 1080 L670 826.2"/><path d="M192 1080 L728 826.2"/><path d="M384 1080 L786 826.2"/><path d="M576 1080 L844 826.2"/><path d="M768 1080 L902 826.2"/><path d="M960 1080 L960 826.2"/><path d="M1152 1080 L1018 826.2"/><path d="M1344 1080 L1076 826.2"/><path d="M1536 1080 L1134 826.2"/><path d="M1728 1080 L1192 826.2"/><path d="M1920 1080 L1250 826.2"/>
+    <path d="M0 860.2 H1920"/><path d="M0 904.2 H1920"/><path d="M0 948.2 H1920"/><path d="M0 992.2 H1920"/>
+  </g>
+
+  <!-- rug -->
+  <g>
+    <path d="M345.59999999999997 860.2 H1574.3999999999999 L1766.4 1064 H153.6 Z" fill="#E8DCC6" opacity=".12"/>
+    <path d="M393.59999999999997 872.2 H1526.4 L1689.6 1052 H230.39999999999998 Z" fill="none" stroke="#C6A45F" stroke-width="2" opacity=".35"/>
+    <path d="M460.79999999999995 886.2 L1478.4 1040 M1459.2 886.2 L441.6 1040" stroke="#C6A45F" stroke-width="1.5" opacity=".12"/>
+  </g>
+
+  <!-- window -->
+  <g>
+    <rect x="976.4000000000001" y="102.2" width="658.4" height="719" fill="#E8DCC6" opacity=".13"/>
+    <path d="M998.4000000000001 799.2 L998.4000000000001 431.4 A307.2 307.2 0 0 1 1612.8000000000002 431.4 L1612.8000000000002 799.2 Z" fill="url(#sky)"/>
+    <g opacity=".3" fill="#46503F">
+      <path d="M1035.2640000000001 799.2 L1084.4160000000002 569.7 L1170.432 799.2Z"/>
+      <path d="M1428.48 799.2 L1502.208 542.7 L1588.2240000000002 799.2Z"/>
+    </g>
+    <path d="M998.4000000000001 799.2 L998.4000000000001 431.4 A307.2 307.2 0 0 1 1612.8000000000002 431.4 L1612.8000000000002 799.2 Z" fill="none" stroke="#C6A45F" stroke-opacity=".6" stroke-width="5"/>
+    <g stroke="#C6A45F" stroke-opacity=".45" stroke-width="3">
+      <path d="M1305.6000000000001 132.2 V799.2"/>
+      <path d="M998.4000000000001 542.7 H1612.8000000000002"/>
+    </g>
+    <rect x="992.4000000000001" y="799.2" width="626.4" height="14" fill="#E8DCC6" opacity=".45"/>
+  </g>
+
+  <!-- curtains -->
+  <g>
+    <rect x="902.4000000000001" y="78.2" width="806.4" height="8" rx="4" fill="url(#gold)" opacity=".7"/>
+    <path d="M906.4000000000001 84.2 C948.4000000000001 204.2 920.4000000000001 495.45000000000005 940.4000000000001 842.2
+             L990.4000000000001 842.2 C970.4000000000001 461.7 992.4000000000001 224.2 1006.4000000000001 84.2 Z"
+          fill="#E8DCC6" opacity=".38"/>
+    <path d="M1704.8000000000002 84.2 C1662.8000000000002 204.2 1690.8000000000002 495.45000000000005 1670.8000000000002 842.2
+             L1620.8000000000002 842.2 C1640.8000000000002 461.7 1618.8000000000002 224.2 1604.8000000000002 84.2 Z"
+          fill="#E8DCC6" opacity=".34"/>
+    <g stroke="#000" stroke-opacity=".08" stroke-width="2" fill="none">
+      <path d="M924.4000000000001 94.2 C950.4000000000001 314.2 944.4000000000001 630.45 954.4000000000001 826.2"/>
+      <path d="M1686.8000000000002 94.2 C1660.8000000000002 314.2 1666.8000000000002 630.45 1656.8000000000002 826.2"/>
+    </g>
+  </g>
+
+  <path d="M1072.1280000000002 154.2 L1514.496 154.2 L1674.496 856.2 L962.1280000000002 856.2 Z" fill="#FFF3D6" opacity="0.22" filter="url(#soft)"/>
+  <rect width="1920" height="1080" fill="#0C1E2E" opacity="0.12"/>
+
+  <!-- artwork -->
+  
+    <g>
+      <rect x="652.2" y="203" width="403.2" height="286.2" fill="#000" opacity=".2"/>
+      <rect x="643.2" y="189" width="403.2" height="286.2" fill="url(#gold)"/>
+      <rect x="651.2" y="197" width="387.2" height="270.2" fill="#F3ECDD"/>
+      <rect x="660.2" y="206" width="369.2" height="252.2" fill="#1B2B33"/>
+      <g transform="translate(844.8000000000001 332.1) scale(1.55124)">
+  <g fill="none" stroke="url(#gold)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 -124 C20 -122 28 -108 42 -102 C60 -100 64 -82 78 -72 C80 -54 96 -44 92 -26
+             C106 -10 96 8 88 20 C92 40 76 50 64 58 C60 78 42 84 26 86
+             C14 100 -6 94 -18 90 C-36 100 -50 86 -60 74 C-78 74 -86 58 -90 44
+             C-106 32 -100 12 -100 -4 C-112 -18 -102 -38 -92 -48
+             C-92 -66 -76 -76 -64 -82 C-60 -100 -42 -102 -32 -106 C-22 -124 -10 -126 0 -124Z"/>
+    <path d="M0 -84 C30 -84 46 -60 46 -30 C46 4 24 32 0 46 C-24 32 -46 4 -46 -30 C-46 -60 -30 -84 0 -84Z" fill="#1B2B33"/>
+    <path d="M-30 -90 L-24 -70 M30 -90 L24 -70 M-4 -108 L0 -94 M14 -104 L8 -92 M-18 -102 L-12 -90"/>
+    <path d="M-30 -26 C-20 -36 -8 -34 -2 -25 M30 -26 C20 -36 8 -34 2 -25"/>
+    <path d="M0 -24 L-8 -10 L8 -10 Z M0 -10 L0 0 M0 0 C-8 8 -18 4 -22 -2 M0 0 C8 8 18 4 22 -2" stroke="#C6A45F"/>
+    <path d="M-42 14 L-24 10 M-42 26 L-24 24 M42 14 L24 10 M42 26 L24 24" stroke-width="2.5"/>
+  </g></g>
+    </g>
+
+  <!-- console under the artwork -->
+  <g>
+    <rect x="604.8" y="594.2" width="480" height="9" rx="4" fill="url(#gold)" opacity=".8"/>
+    <rect x="633.6" y="603.2" width="6" height="97.2" fill="url(#gold)" opacity=".55"/>
+    <rect x="1052.16" y="603.2" width="6" height="97.2" fill="url(#gold)" opacity=".55"/>
+    <path d="M796.8 594.2 h24 l-5 -42 h-14 z" fill="#EDE4D2" opacity=".92"/>
+    <g stroke="#66765C" stroke-width="3" fill="none" stroke-linecap="round">
+      <path d="M816 552.2 q -10 -30 -28 -44"/>
+      <path d="M829.4399999999999 552.2 q 6 -34 24 -48"/>
+      <path d="M821.76 552.2 q -2 -26 4 -42"/>
+    </g>
+    <rect x="902.4" y="583.2" width="56" height="11" rx="2" fill="#E7DBC4" opacity=".9"/>
+    <rect x="908.16" y="572.2" width="42" height="11" rx="2" fill="#C6A45F" opacity=".75"/>
+  </g>
+
+  <!-- sofa -->
+  <g>
+    <ellipse cx="912" cy="850.2" rx="576" ry="16" fill="#000" opacity=".25" filter="url(#softSm)"/>
+    <rect x="585.6" y="668.2" width="748.8000000000001" height="62" rx="22" fill="url(#sofaGrad)"/>
+    <rect x="537.6" y="714.2" width="844.8" height="86" rx="16" fill="url(#sofaGrad)"/>
+    <g fill="none" stroke="#000" stroke-opacity=".09" stroke-width="2">
+      <rect x="579.84" y="678.2" width="345.59999999999997" height="56" rx="14"/>
+      <rect x="994.5600000000001" y="678.2" width="345.59999999999997" height="56" rx="14"/>
+      <rect x="576" y="738.2" width="364.8" height="52" rx="10"/>
+      <rect x="979.2" y="738.2" width="364.8" height="52" rx="10"/>
+    </g>
+    <rect x="585.6" y="676.2" width="68" height="66" rx="12" transform="rotate(-6 585.6 676.2)" fill="#C6A45F" opacity=".82"/>
+    <rect x="1152" y="674.2" width="60" height="64" rx="12" transform="rotate(5 1152 674.2)" fill="#E8DCC6" opacity=".95" stroke="#000" stroke-opacity=".1"/>
+    <path d="M556.8 710.2 q 30 -18 56 6 q -10 44 -58 46 z" fill="#E8DCC6" opacity=".55"/>
+    <rect x="537.6" y="794.2" width="844.8" height="10" fill="#000" opacity=".14"/>
+    <g stroke="#3A3126" stroke-width="6" opacity=".6">
+      <path d="M595.2 804.2 V838.2"/>
+      <path d="M1286.4 804.2 V838.2"/>
+    </g>
+  </g>
+
+  <!-- coffee table -->
+  <g>
+    <ellipse cx="902.4" cy="922.2" rx="307.2" ry="16" fill="#000" opacity=".3"/>
+    <rect x="691.1999999999999" y="874.2" width="422.4" height="12" rx="6" fill="url(#gold)" opacity=".85"/>
+    <rect x="758.4000000000001" y="886.2" width="7" height="56.16" fill="url(#gold)" opacity=".55"/>
+    <rect x="1036.8000000000002" y="886.2" width="7" height="56.16" fill="url(#gold)" opacity=".55"/>
+    <g>
+      <path d="M835.2 874.2 h30 l-5 -20 h-20 z" fill="#EDE4D2" opacity=".95"/>
+      <path d="M844.8 868.2 q -16 -8 -14 -24 M892.8000000000001 866.2 q 4 -22 18 -30 M879.36 868.2 q -6 -24 -22 -30" stroke="#7F8F72" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <rect x="969.6" y="860.2" width="60" height="10" rx="2" fill="#E9DDC7" opacity=".9"/>
+    <rect x="969.6" y="849.2" width="46" height="10" rx="2" fill="#C6A45F" opacity=".8"/>
+  </g>
+
+  <!-- side table & lamp -->
+  <g>
+    <rect x="1449.6" y="768.2" width="211.2" height="8" rx="4" fill="url(#gold)" opacity=".7"/>
+    <path d="M1474.56 776.2 V852.2 M1635.84 776.2 V852.2" stroke="url(#gold)" stroke-width="4" opacity=".55"/>
+    <rect x="1545.6000000000001" y="666.2" width="6" height="102" fill="url(#gold)" opacity=".6"/>
+    <path d="M1509.6000000000001 672.2 h78 l-15 -50 h-48 z" fill="#F3E6C8" opacity=".92"/>
+    <ellipse cx="1545.6000000000001" cy="670.2" rx="58" ry="10" fill="#FFF3D3" opacity=".3" filter="url(#softSm)"/>
+    <circle cx="1545.6000000000001" cy="666.2" r="4" fill="#FFF3D3" opacity=".8"/>
+  </g>
+
+  <!-- plant -->
+  <g transform="translate(1737.6000000000001 836.2)">
+    <path d="M-24 0 h48 l-8 60 h-32 z" fill="#3A3126" opacity=".85"/>
+    <path d="M-24 0 h48 l-2 10 h-44 z" fill="url(#gold)" opacity=".5"/>
+    <g stroke="#586B57" stroke-width="4" fill="none" stroke-linecap="round">
+      <path d="M0 0 C-4 -50 -26 -62 -38 -94"/>
+      <path d="M2 -6 C12 -54 34 -66 44 -100"/>
+      <path d="M0 -10 C-2 -60 4 -92 0 -124"/>
+      <path d="M-38 -94 q -24 -4 -28 -26 q 26 -2 28 26"/>
+      <path d="M44 -100 q 26 -4 30 -26 q -28 -2 -30 26"/>
+      <path d="M0 -124 q 2 -26 -12 -40 q -16 20 12 40"/>
+    </g>
+  </g>
+
+  <rect width="1920" height="1080" fill="url(#vignette)"/>
+  <rect width="1920" height="1080" filter="url(#grain)" opacity=".5"/>
+</svg>

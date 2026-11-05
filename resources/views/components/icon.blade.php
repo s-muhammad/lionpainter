@@ -1,0 +1,57 @@
+@props(['name' => 'brush', 'class' => 'h-6 w-6'])
+
+@php
+    $icons = [
+        'brush' => '<path d="M9.5 14.5 18.9 5.1a2.1 2.1 0 0 1 3 3l-9.4 9.4"/><path d="M9.5 14.5a3 3 0 0 1 0 4.2l-1.6 1.6a2.4 2.4 0 0 1-3.4-3.4l1.6-1.6a3 3 0 0 1 3.4-.8Z"/><path d="M13.5 9.5 6 17"/>',
+        'roller' => '<rect x="3" y="4" width="14" height="7" rx="1.5"/><path d="M17 7.5h3a1 1 0 0 1 1 1V12a1 1 0 0 1-1 1h-7a1 1 0 0 0-1 1v2"/><rect x="10.5" y="16" width="4" height="5" rx="1"/>',
+        'home' => '<path d="m3 10.5 9-7 9 7"/><path d="M5.5 9v11h13V9"/><path d="M9.5 20v-6h5v6"/>',
+        'building' => '<path d="M4 21V4.5A1.5 1.5 0 0 1 5.5 3h8A1.5 1.5 0 0 1 15 4.5V21"/><path d="M15 9h3.5A1.5 1.5 0 0 1 20 10.5V21"/><path d="M2 21h20M7 7h3M7 11h3M7 15h3M12 7h.01M12 11h.01M12 15h.01"/>',
+        'shield' => '<path d="M12 3 5 6v5.5c0 4.4 2.9 7.9 7 9.5 4.1-1.6 7-5.1 7-9.5V6l-7-3Z"/><path d="m9 12 2 2 4-4"/>',
+        'sparkle' => '<path d="m12 3 1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8L12 3Z"/><path d="m18 15 .8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8L18 15Z"/>',
+        'check' => '<path d="m4.5 12.5 5 5 10-11"/>',
+        'check-circle' => '<circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16 9"/>',
+        'arrow-right' => '<path d="M4 12h16"/><path d="m14 6 6 6-6 6"/>',
+        'arrow-left' => '<path d="M20 12H4"/><path d="m10 18-6-6 6-6"/>',
+        'arrow-up-right' => '<path d="M7 17 17 7"/><path d="M8 7h9v9"/>',
+        'phone' => '<path d="M6.6 3h2.2l1.5 4-2 1.4a12 12 0 0 0 5.3 5.3l1.4-2 4 1.5v2.2a2.6 2.6 0 0 1-2.8 2.6C9.7 17.4 4.6 12.3 4 5.8A2.6 2.6 0 0 1 6.6 3Z"/>',
+        'mail' => '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/>',
+        'pin' => '<path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/>',
+        'clock' => '<circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/>',
+        'star' => '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/>',
+        'quote' => '<path d="M9.5 6C6.5 7.3 5 9.7 5 13v5h6v-6H8c0-2 .6-3.3 2.4-4.2L9.5 6Zm9 0C15.5 7.3 14 9.7 14 13v5h6v-6h-3c0-2 .6-3.3 2.4-4.2L18.5 6Z"/>',
+        'chevron-down' => '<path d="m6 9 6 6 6-6"/>',
+        'chevron-right' => '<path d="m9 6 6 6-6 6"/>',
+        'chevron-left' => '<path d="m15 6-6 6 6 6"/>',
+        'menu' => '<path d="M4 7h16M4 12h16M4 17h16"/>',
+        'close' => '<path d="M6 6l12 12M18 6 6 18"/>',
+        'instagram' => '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/>',
+        'facebook' => '<path d="M14 8.5V6.8c0-.9.4-1.3 1.3-1.3H17V3h-2.6c-2.4 0-3.9 1.4-3.9 3.9v1.6H8V11h2.5v10H14V11h2.6l.4-2.5H14Z"/>',
+        'palette' => '<path d="M12 3a9 9 0 0 0 0 18c1.7 0 2.5-1.1 2.5-2.2 0-.9-.4-1.4-.9-2-.4-.5-.7-1-.7-1.7 0-1.1.9-2 2.1-2H17a4 4 0 0 0 4-4c0-3.3-4-6.1-9-6.1Z"/><circle cx="7.5" cy="10" r="1" fill="currentColor"/><circle cx="10" cy="6.8" r="1" fill="currentColor"/><circle cx="14" cy="6.8" r="1" fill="currentColor"/><circle cx="16.8" cy="9.6" r="1" fill="currentColor"/>',
+        'award' => '<circle cx="12" cy="9" r="6"/><path d="m9 14-1.5 7 4.5-2.5 4.5 2.5L15 14"/>',
+        'calendar' => '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/>',
+        'leaf' => '<path d="M4 20c0-9 5-15 16-16 1 11-4 16-13 16H4Z"/><path d="M4 20c4-5 8-8 13-10"/>',
+        'drop' => '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/>',
+        'ruler' => '<path d="m3 16 13-13 5 5L8 21l-5-5Z"/><path d="m8 16 2-2M11 13l2-2M14 10l2-2"/>',
+        'plus' => '<path d="M12 5v14M5 12h14"/>',
+        'minus' => '<path d="M5 12h14"/>',
+        'search' => '<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',
+        'edit' => '<path d="M4 20h4L20 8l-4-4L4 16v4Z"/><path d="m14 6 4 4"/>',
+        'trash' => '<path d="M4 7h16M9 3h6l1 4H8l1-4ZM6 7l1 14h10l1-14M10 11v6M14 11v6"/>',
+        'eye' => '<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/>',
+        'logout' => '<path d="M10 4H5v16h5M15 8l4 4-4 4M19 12H9"/>',
+        'grid' => '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+        'image' => '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="9" r="1.6"/><path d="m4 18 5-5 4 4 2-2 5 4"/>',
+        'file' => '<path d="M6 3h7l5 5v13H6V3Z"/><path d="M13 3v5h5M9 13h6M9 17h6"/>',
+        'settings' => '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.2a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.2a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.2a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.2a1.6 1.6 0 0 0-1.4 1Z"/>',
+        'users' => '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>',
+        'message' => '<path d="M21 12a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1.1L4 20.5l1.1-4.2A8.5 8.5 0 1 1 21 12Z"/>',
+        'layers' => '<path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5M3 17l9 5 9-5"/>',
+        'sun' => '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+        'wind' => '<path d="M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h8a2.5 2.5 0 1 1-2.5 2.5"/>',
+        'clock-check' => '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    ];
+@endphp
+
+<svg {{ $attributes->merge(['class' => $class, 'fill' => 'none', 'stroke' => 'currentColor', 'stroke-width' => '1.5', 'stroke-linecap' => 'round', 'stroke-linejoin' => 'round', 'viewBox' => '0 0 24 24', 'aria-hidden' => 'true']) }}>
+    {!! $icons[$name] ?? $icons['brush'] !!}
+</svg>
