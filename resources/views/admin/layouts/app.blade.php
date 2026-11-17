@@ -10,6 +10,7 @@
         ['label' => 'خدمات', 'route' => 'admin.services.index', 'active' => 'admin.services.*', 'icon' => 'brush'],
         ['label' => 'پروژه‌ها', 'route' => 'admin.projects.index', 'active' => 'admin.projects.*', 'icon' => 'image'],
         ['label' => 'مقالات', 'route' => 'admin.posts.index', 'active' => 'admin.posts.*', 'icon' => 'file'],
+        ['label' => 'دفترچه سئو', 'route' => 'admin.seo.index', 'active' => 'admin.seo.*', 'icon' => 'search'],
         ['label' => 'نظرات مشتریان', 'route' => 'admin.testimonials.index', 'active' => 'admin.testimonials.*', 'icon' => 'quote'],
         ['label' => 'سؤالات متداول', 'route' => 'admin.faqs.index', 'active' => 'admin.faqs.*', 'icon' => 'message'],
         ['label' => 'درخواست‌های قیمت', 'route' => 'admin.quotes.index', 'active' => 'admin.quotes.*', 'icon' => 'file', 'badge' => $newQuotes],

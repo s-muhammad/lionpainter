@@ -50,6 +50,8 @@
         'sun' => '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
         'wind' => '<path d="M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h8a2.5 2.5 0 1 1-2.5 2.5"/>',
         'clock-check' => '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+        'network' => '<circle cx="5" cy="6" r="2.4"/><circle cx="19" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M7 7.2 10.6 15.8M17 7.2 13.4 15.8M7.4 6h9.2"/>',
+        'target' => '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.6"/><circle cx="12" cy="12" r=".7" fill="currentColor"/>',
     ];
 @endphp
 

@@ -7,6 +7,9 @@ use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Admin\QuoteRequestController;
+use App\Http\Controllers\Admin\SeoKeywordController;
+use App\Http\Controllers\Admin\SeoNotebookController;
+use App\Http\Controllers\Admin\SeoTaskController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TestimonialController;
@@ -76,6 +79,25 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('posts', AdminPostController::class)->except('show');
         Route::resource('testimonials', TestimonialController::class)->except(['show', 'create']);
         Route::resource('faqs', FaqController::class)->except(['show', 'create']);
+
+        Route::prefix('seo')->name('seo.')->group(function () {
+            Route::get('/', SeoNotebookController::class)->name('index');
+
+            Route::post('keywords/import', [SeoKeywordController::class, 'import'])->name('keywords.import');
+            Route::get('keywords/export', [SeoKeywordController::class, 'export'])->name('keywords.export');
+            Route::patch('keywords/bulk-status', [SeoKeywordController::class, 'bulkStatus'])->name('keywords.bulk-status');
+            Route::post('keywords', [SeoKeywordController::class, 'store'])->name('keywords.store');
+            Route::put('keywords/{keyword}', [SeoKeywordController::class, 'update'])->name('keywords.update');
+            Route::delete('keywords/{keyword}', [SeoKeywordController::class, 'destroy'])->name('keywords.destroy');
+            Route::patch('keywords/{keyword}/status', [SeoKeywordController::class, 'status'])->name('keywords.status');
+
+            Route::post('tasks/import', [SeoTaskController::class, 'import'])->name('tasks.import');
+            Route::get('tasks/export', [SeoTaskController::class, 'export'])->name('tasks.export');
+            Route::post('tasks', [SeoTaskController::class, 'store'])->name('tasks.store');
+            Route::put('tasks/{task}', [SeoTaskController::class, 'update'])->name('tasks.update');
+            Route::delete('tasks/{task}', [SeoTaskController::class, 'destroy'])->name('tasks.destroy');
+            Route::patch('tasks/{task}/toggle', [SeoTaskController::class, 'toggle'])->name('tasks.toggle');
+        });
 
         Route::get('messages', [ContactMessageController::class, 'index'])->name('messages.index');
         Route::get('messages/{message}', [ContactMessageController::class, 'show'])->name('messages.show');
