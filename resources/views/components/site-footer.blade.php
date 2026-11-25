@@ -85,7 +85,7 @@
                 <a href="{{ route('privacy') }}" class="transition-colors hover:text-cream-50/70">Privacy</a>
                 <a href="{{ route('terms') }}" class="transition-colors hover:text-cream-50/70">Terms</a>
                 <a href="{{ route('sitemap') }}" class="transition-colors hover:text-cream-50/70">Sitemap</a>
-                <span class="hidden items-center gap-1.5 text-cream-50/25 sm:flex">Made in Melbourne <span class="text-gold-500/60">·</span></span>
+                <span class="hidden items-center gap-1.5 text-cream-50/25 sm:flex">designed by DevProfile <span class="text-gold-500/60">·</span></span>
             </div>
         </div>
     </div>

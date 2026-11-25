@@ -52,7 +52,8 @@
     @edit-keyword.window="showEdit($event.detail)"
     @keydown.escape.window="close()"
 >
-    <div x-show="open" x-cloak class="fixed inset-0 z-[60] overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="keyword-modal-title">
+    {{-- Inline display:none keeps the dialog hidden even if the Alpine component fails to boot. --}}
+    <div x-show="open" x-cloak style="display: none" class="fixed inset-0 z-[60] overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="keyword-modal-title">
         <div class="flex min-h-full items-end justify-center p-3 sm:items-center sm:p-6">
             <div class="fixed inset-0 bg-ink-950/60 backdrop-blur-sm" @click="close()" aria-hidden="true"></div>
 
