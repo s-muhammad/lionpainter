@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="space-y-6">
-        <section class="relative overflow-hidden rounded-2xl bg-ink-950 p-6 text-white sm:p-8">
+        {{-- <section class="relative overflow-hidden rounded-2xl bg-ink-950 p-6 text-white sm:p-8">
             <div class="pointer-events-none absolute inset-0 bg-grain opacity-50"></div>
             <div class="pointer-events-none absolute -left-10 -top-16 font-display text-[14rem] leading-none text-white/[0.03]">L</div>
             <div class="relative flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
@@ -28,7 +28,7 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             @foreach ([

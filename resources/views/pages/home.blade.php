@@ -20,17 +20,17 @@
 
         <div class="shell relative flex min-h-[660px] flex-col justify-center pb-14 pt-20 sm:min-h-[700px] lg:min-h-[760px] lg:pb-20 lg:pt-24">
             <div class="max-w-[660px]">
-                <p class="eyebrow-light flex items-center gap-4 fade-up">
+                <h1 class="eyebrow-light flex items-center gap-4 fade-up">
                     <span class="h-px w-10 bg-gold-500"></span>
                     {{ setting('hero_eyebrow') }}
-                </p>
+                </h1>
 
-                <h1 class="mt-7 font-display text-[52px] font-medium leading-[0.98] tracking-[-0.02em] text-shadow-soft sm:text-[68px] lg:text-[82px] fade-up fade-up-delay-1">
+                <p class="mt-7 font-display text-[52px] font-medium leading-[0.98] tracking-[-0.02em] text-shadow-soft sm:text-[68px] lg:text-[82px] fade-up fade-up-delay-1">
                     {{ $heroLineOne }}.
                     @if ($heroLineTwo)
                         <span class="mt-1 block italic text-gold-300">{{ $heroLineTwo }}</span>
                     @endif
-                </h1>
+                </p>
 
                 <p class="mt-7 max-w-lg text-base leading-relaxed text-cream-50/80 fade-up fade-up-delay-2">
                     {{ setting('hero_text') }}
@@ -38,7 +38,7 @@
 
                 <div class="mt-9 flex flex-col gap-3 sm:flex-row fade-up fade-up-delay-3">
                     <a href="{{ route('services.index') }}" class="btn-gold">
-                        Discover our services
+                        Discover our painting services
                         <x-icon name="arrow-right" class="h-4 w-4" />
                     </a>
                     <a href="{{ route('projects.index') }}" class="btn-outline">View our portfolio</a>
@@ -103,7 +103,7 @@
                     </p>
                 </div>
                 <a href="{{ route('services.index') }}" class="link-underline shrink-0">
-                    All services
+                    All painting services
                     <x-icon name="arrow-right" class="h-3.5 w-3.5" />
                 </a>
             </div>
@@ -125,7 +125,7 @@
                     <div class="relative overflow-hidden bg-ink-900">
                         <img
                             src="{{ asset_versioned(setting('home_why_image', 'images/living-room.png')) }}"
-                            alt="Close-up of a paint roller applying a fresh cream coat to a wall"
+                            alt="House painter's roller applying a fresh coat of cream paint to an interior wall in Melbourne"
                             class="aspect-[4/3.2] w-full object-cover"
                             loading="lazy"
                             width="1200"
@@ -134,7 +134,7 @@
                     </div>
                     <div class="absolute -bottom-7 right-5 flex items-center gap-4 bg-ink-950 px-6 py-5 text-cream-50 shadow-xl sm:right-10">
                         <span class="font-display text-5xl font-medium leading-none text-gold-400">{{ setting('years') }}</span>
-                        <span class="max-w-[90px] text-[9px] uppercase leading-relaxed tracking-[0.18em] text-cream-50/65">Years of masterful finishes</span>
+                        <span class="max-w-[90px] text-[9px] uppercase leading-relaxed tracking-[0.18em] text-cream-50/65">Years painting Melbourne homes</span>
                     </div>
                 </div>
 
@@ -185,10 +185,10 @@
             <div>
                 <p class="eyebrow-light">The transformation</p>
                 <h2 class="mt-4 font-display text-4xl leading-[1.05] sm:text-5xl lg:text-[56px]">
-                    See the difference a<br><span class="text-gold-300">proper finish</span> makes.
+                    Painting Before & After.<br><span class="text-gold-300">See the difference</span> a proper finish makes.
                 </h2>
                 <p class="mt-5 max-w-md text-base leading-relaxed text-cream-50/70">
-                    The same Hawthorn living room, reimagined. Careful preparation, a considered palette and three coats of premium low-sheen enamel — the details you only notice when they’re missing.
+                    The same Hawthorn living room, repainted by our Melbourne house painters. Careful preparation, a considered palette and three coats of premium low-sheen enamel — the details you only notice when they’re missing.
                 </p>
                 <dl class="mt-8 grid grid-cols-3 gap-6 border-t border-cream-50/10 pt-7">
                     <div>
@@ -204,7 +204,7 @@
                         <dd class="mt-1 font-display text-xl font-medium text-cream-50">Low sheen</dd>
                     </div>
                 </dl>
-                <a href="{{ route('projects.index') }}" class="btn-outline mt-9">Explore the portfolio</a>
+                <a href="{{ route('projects.index') }}" class="btn-outline mt-9">Explore our painting portfolio</a>
             </div>
 
             <div
@@ -218,9 +218,9 @@
                 data-reveal
             >
                 <div class="relative overflow-hidden border border-cream-50/10" x-ref="frame">
-                    <img src="{{ asset_versioned(setting('home_before_image', 'images/before.jpg')) }}" alt="Living room before painting, with tired neutral walls" class="aspect-[4/3] w-full object-cover" loading="lazy" width="1600" height="1000">
+                    <img src="{{ asset_versioned(setting('home_before_image', 'images/before.jpg')) }}" alt="Hawthorn living room before house painting, with tired neutral walls" class="aspect-[4/3] w-full object-cover" loading="lazy" width="1600" height="1000">
                     <div class="absolute inset-0" :style="`clip-path: inset(0 0 0 ${position}%)`">
-                        <img src="{{ asset_versioned(setting('home_after_image', 'images/after.jpg')) }}" alt="The same living room after a premium green repaint and new styling" class="h-full w-full object-cover" loading="lazy" width="1600" height="1000">
+                        <img src="{{ asset_versioned(setting('home_after_image', 'images/after.jpg')) }}" alt="The same Hawthorn living room after a premium green repaint and new styling" class="h-full w-full object-cover" loading="lazy" width="1600" height="1000">
                     </div>
 
                     <span class="absolute left-4 top-4 bg-ink-950/70 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-cream-50/80 backdrop-blur">Before</span>
@@ -256,7 +256,7 @@
                 <div class="max-w-2xl">
                     <p class="eyebrow">Selected work</p>
                     <h2 class="mt-4 font-display text-4xl leading-[1.05] sm:text-5xl lg:text-[56px]">
-                        Recent homes, considered finishes.
+                        Recent House Painting Projects in Melbourne.
                     </h2>
                     <p class="mt-4 max-w-xl text-base leading-relaxed text-ink-900/75">
                         A small selection of interiors, exteriors and heritage restorations from across Melbourne — each one prepared by hand and finished to last.
@@ -292,7 +292,7 @@
                 <p class="mt-6 max-w-xs text-base leading-relaxed text-ink-900/70">
                     Every project is finished by the same small team who started it. That is why our clients keep coming back.
                 </p>
-                <a href="{{ route('contact') }}" class="link-underline mt-7">Talk to us about your home</a>
+                <a href="{{ route('contact') }}" class="link-underline mt-7">Talk to us about painting your home</a>
             </div>
 
             @if ($testimonials->isNotEmpty())
@@ -353,7 +353,7 @@
                 <div class="max-w-2xl">
                     <p class="eyebrow">The journal</p>
                     <h2 class="mt-4 font-display text-4xl leading-[1.05] sm:text-5xl lg:text-[56px]">
-                        Notes from the studio.
+                        Painting Tips & Colour Guides.
                     </h2>
                     <p class="mt-4 max-w-xl text-base leading-relaxed text-ink-900/75">
                         Colour notes, preparation guides and lessons from the homes we paint — written by the people holding the brush.
@@ -378,7 +378,7 @@
         <div class="shell grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
             <div>
                 <p class="eyebrow">Good to know</p>
-                <h2 class="mt-4 font-display text-4xl leading-[1.05] sm:text-5xl">Questions, answered.</h2>
+                <h2 class="mt-4 font-display text-4xl leading-[1.05] sm:text-5xl">House Painting FAQs.</h2>
 
                 <div x-data="faqAccordion(0)" class="mt-9 divide-y divide-ink-900/10 border-y border-ink-900/10">
                     @foreach ($faqs as $index => $faq)
@@ -401,16 +401,16 @@
                     @endforeach
                 </div>
                 <a href="{{ route('faqs') }}" class="link-underline mt-8">
-                    All frequently asked questions
+                    All house painting FAQs
                     <x-icon name="arrow-right" class="h-3.5 w-3.5" />
                 </a>
             </div>
 
             <aside class="bg-ink-950 p-8 text-cream-50 sm:p-10">
                 <p class="eyebrow-light">Where we work</p>
-                <h2 class="mt-4 font-display text-4xl font-medium">Across Melbourne.</h2>
+                <h2 class="mt-4 font-display text-4xl font-medium">House Painters Across Melbourne Suburbs.</h2>
                 <p class="mt-3 text-base leading-relaxed text-cream-50/70">
-                    Based in Cremorne, painting homes and workplaces across the inner east, bayside and beyond.
+                    Based in Cremorne, our house painters work across Melbourne's inner east, bayside and beyond.
                 </p>
                 <ul class="mt-7 grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-cream-50/75">
                     @foreach (array_slice(config('site.suburbs'), 0, 6) as $suburb)
@@ -423,7 +423,7 @@
                 <div class="mt-8 border-t border-cream-50/10 pt-6">
                     <p class="text-sm text-cream-50/70">We paint across more than 40 Melbourne suburbs.</p>
                     <a href="{{ route('service-areas') }}" class="mt-4 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-gold-400 hover:text-gold-300">
-                        See all service areas
+                        See all Melbourne painting service areas
                         <x-icon name="arrow-up-right" class="h-3.5 w-3.5" />
                     </a>
                 </div>
